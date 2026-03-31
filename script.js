@@ -15,6 +15,7 @@ function initTheme() {
     }
 }
 
+
 function applyDark() {
     htmlElement.setAttribute('data-theme', 'dark');
     toggleIcon.className = 'fa fa-sun'; 
@@ -61,6 +62,19 @@ function toggleSidebar() {
     } else {
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
+    }
+}
+
+
+/**
+ * Opens the credential URL in a new browser tab.
+ * @param {string} url - The verification link for the certificate.
+ */
+function openCredential(url) {
+    if (url && url !== '#') {
+        window.open(url, '_blank');
+    } else {
+        alert("Credential link not provided for this certificate.");
     }
 }
 
